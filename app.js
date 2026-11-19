@@ -375,16 +375,16 @@
     }
     dlg.addEventListener('close', function () {
       document.body.classList.remove('lock');
-      try { sessionStorage.setItem('hvost.about.seen', '1'); } catch (e) { /* ignore */ }
+
     });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
     $('#aboutClose').addEventListener('click', close);
     $('#aboutX').addEventListener('click', close);
     var openBtn = $('#aboutOpen');
     if (openBtn) openBtn.addEventListener('click', open);
-    var seen = false;
-    try { seen = sessionStorage.getItem('hvost.about.seen') === '1'; } catch (e) { /* ignore */ }
-    if (!seen) open();
+
+
+    open(); /* карточка показывается при каждой загрузке страницы */
   }
 
   function initReceiptMeta() {
