@@ -385,6 +385,7 @@
 
 
     open(); /* карточка показывается при каждой загрузке страницы */
+    window.addEventListener('pageshow', function (e) { if (e.persisted) open(); });
   }
 
   function initReceiptMeta() {
