@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хвост в дом — как осознанно взять животное из приюта</title>
+<meta name="description" content="Квиз «Готов ли я?», калькулятор расходов на первый год и чек-листы для тех, кто хочет взять собаку или кошку из приюта и не вернуть её обратно.">
+<meta name="author" content="Кислый Михаил Борисович">
+<meta name="theme-color" content="#15171C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='36' r='24' fill='%23FFE24D' stroke='%2315171C' stroke-width='4'/%3E%3Ccircle cx='32' cy='12' r='5' fill='none' stroke='%2315171C' stroke-width='4'/%3E%3Ccircle cx='32' cy='38' r='8' fill='%2315171C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&family=Fira+Sans:wght@800;900&display=swap&subset=cyrillic">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Значок лапы (используется в нескольких местах) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="paw" viewBox="0 0 64 64">
+    <ellipse cx="13" cy="28" rx="6" ry="8.5" transform="rotate(-22 13 28)"/>
+    <ellipse cx="25" cy="15" rx="6.5" ry="9.5" transform="rotate(-8 25 15)"/>
+    <ellipse cx="40" cy="15" rx="6.5" ry="9.5" transform="rotate(8 40 15)"/>
+    <ellipse cx="52" cy="28" rx="6" ry="8.5" transform="rotate(22 52 28)"/>
+    <path d="M32 31c-9.500 0-18 9-18 17.500 0 6 5 8 10.500 6.800 2.700-.6 4.800-1.800 7.500-1.800s4.800 1.200 7.500 1.800C45 56.500 50 54.500 50 48.500 50 40 41.500 31 32 31z"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<!-- Окно при открытии сайта: паспорт проекта -->
+<dialog class="pass" id="about" aria-labelledby="aboutTitle">
+  <div class="pass__cover">
+    <button type="button" class="pass__x" id="aboutX" aria-label="Закрыть окно">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg>
+    </button>
+    <svg class="pass__tag" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="38" r="24" fill="#FFE24D" stroke="#15171C" stroke-width="4"/>
+      <circle cx="32" cy="11" r="6" fill="none" stroke="#15171C" stroke-width="4"/>
+      <use href="#paw" x="18" y="24" width="28" height="28" fill="#15171C"/>
+    </svg>
+    <div>
+      <p class="pass__kind">Паспорт проекта</p>
+      <h2 id="aboutTitle">Хвост в дом</h2>
+    </div>
+  </div>
+  <div class="pass__body">
+    <p class="pass__what">Учебный социальный проект о бездомных животных. Сайт помогает заранее понять, готовы ли вы взять собаку или кошку из приюта, и подготовиться, чтобы животное не вернулось обратно.</p>
+    <dl class="pass__rows">
+      <div><dt>Автор</dt><dd>Кислый Михаил Борисович</dd></div>
+      <div><dt>Образовательная программа</dt><dd>«Международные отношения»</dd></div>
+      <div><dt>Курс</dt><dd>1-й</dd></div>
+      <div><dt>Университет</dt><dd>НИУ ВШЭ</dd></div>
+      <div><dt>Год</dt><dd>2026</dd></div>
+      <div><dt>Социальная сфера</dt><dd>Бездомность животных</dd></div>
+    </dl>
+    <p class="pass__in"><b>Что внутри:</b> квиз из 9 вопросов, калькулятор расходов на первый год, три чек-листа на 26 пунктов и памятка о том, как проходит взятие из приюта.</p>
+    <div class="pass__foot">
+      <button type="button" class="btn" id="aboutClose">Перейти на сайт</button>
+      <svg class="pass__seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <defs><path id="ring2" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+        <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="5"/>
+        <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="3"/>
+        <text font-size="25" font-weight="900" fill="currentColor"><textPath href="#ring2" textLength="440" lengthAdjust="spacing">ИЗ ПРИЮТА — НАВСЕГДА — </textPath></text>
+        <use href="#paw" x="68" y="68" width="64" height="64" fill="currentColor"/>
+      </svg>
+    </div>
+  </div>
+</dialog>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="logo" href="#top" aria-label="Хвост в дом — на главную">
+      <svg class="logo__tag" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="38" r="24" fill="#FFE24D" stroke="currentColor" stroke-width="4"/>
+        <circle cx="32" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="4"/>
+        <use href="#paw" x="18" y="24" width="28" height="28" fill="currentColor"/>
+      </svg>
+      <span>Хвост в дом</span>
+    </a>
+    <nav class="nav" aria-label="Разделы сайта">
+      <a href="#problem">Проблема</a>
+      <a href="#quiz">Квиз</a>
+      <a href="#calc">Расходы</a>
+      <a href="#lists">Чек-листы</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="btn btn--yellow btn--sm" href="#quiz">Пройти квиз</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO: объявление с отрывными полосками -->
+<section class="wall" id="top">
+  <div class="wrap">
+    <article class="flyer">
+      <span class="tape tape--l" aria-hidden="true"></span>
+      <span class="tape tape--r" aria-hidden="true"></span>
+
+      <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <defs><path id="ring" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+        <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="5"/>
+        <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="3"/>
+        <text font-size="25" font-weight="900" fill="currentColor"><textPath href="#ring" textLength="440" lengthAdjust="spacing">ИЗ ПРИЮТА — НАВСЕГДА — </textPath></text>
+        <use href="#paw" x="68" y="68" width="64" height="64" fill="currentColor"/>
+      </svg>
+
+      <div class="flyer__body">
+        <h1>Возьмите из&nbsp;приюта — и&nbsp;не&nbsp;возвращайте</h1>
+        <p class="flyer__lead">Хвост в дом помогает заранее понять, готовы ли вы к собаке или кошке из приюта. Пройдите квиз, посчитайте расходы на первый год и подготовьте дом по чек-листу. Бесплатно и без регистрации.</p>
+        <div class="flyer__cta">
+          <a class="btn" href="#quiz">Пройти квиз за 3 минуты</a>
+          <a class="textlink" href="#calc">Посчитать расходы</a>
+        </div>
+        <ul class="flyer__facts">
+          <li><b>9</b> вопросов в квизе</li>
+          <li><b>4</b> вида животных в калькуляторе</li>
+          <li><b>26</b> пунктов в чек-листах</li>
+        </ul>
+      </div>
+
+      <ul class="tabs" aria-label="Разделы сайта">
+        <li><a href="#problem"><span>Проблема</span></a></li>
+        <li><a href="#quiz"><span>Квиз</span></a></li>
+        <li><a href="#calc"><span>Расходы</span></a></li>
+        <li><a href="#lists"><span>Чек-листы</span></a></li>
+        <li><a href="#steps"><span>Как взять</span></a></li>
+        <li><a href="#faq"><span>Вопросы</span></a></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ПРОБЛЕМА -->
+<section class="sec sec--paper" id="problem">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2>Животных без дома по-прежнему миллионы</h2>
+        <p class="lead">Каждый, кто берёт питомца из приюта, помогает. Но только если животное остаётся в новой семье: каждый возврат — стресс для него и потерянное место для следующего.</p>
+      </div>
+      <ul class="ledger">
+        <li>
+          <b class="ledger__n">3,6 млн</b>
+          <p>собак и кошек без хозяев насчитала Всероссийская перепись бездомных животных 2025 года. В 2021 году их было 4,08 млн. <a class="src" href="#sources">[1]</a></p>
+        </li>
+        <li>
+          <b class="ledger__n">56%</b>
+          <p>российских семей держат домашних животных, всего их около 75 млн (перепись 2024 года). Кошек чаще подбирают на улице. <a class="src" href="#sources">[2]</a></p>
+        </li>
+        <li>
+          <b class="ledger__n">+9%</b>
+          <p>за год вырос средний чек на корм для собак (июнь 2025 к июню 2024). За пять лет вакцинация питомцев подорожала на 140%. <a class="src" href="#sources">[3][5]</a></p>
+        </li>
+      </ul>
+    </div>
+
+    <h3 class="map__title">Почему животных возвращают и чем сайт помогает</h3>
+    <p class="map__intro">Исследование 2024 года проанализировало 2836 записей об отказе от животных в одном американском приюте. Чаще всего владельцы называли поведение животного (28%), переезд и жильё (18%), невозможность ухаживать (16%) и деньги (6%). <a class="src" href="#sources">[7]</a> По оценке другой работы 2024 года, от 7 до 15% усыновлённых собак возвращают в приют. <a class="src" href="#sources">[8]</a> Почти все эти причины можно обсудить заранее.</p>
+    <table class="map">
+      <thead>
+        <tr><th scope="col">Причина</th><th scope="col">Что происходит</th><th scope="col">Что делать на сайте</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Деньги</th><td>Корм, лечение и непредвиденные траты оказываются выше, чем ожидали.</td><td><a href="#calc">Посчитать расходы</a></td></tr>
+        <tr><th scope="row">Время</th><td>На выгул, воспитание и адаптацию не хватает дней и сил.</td><td><a href="#quiz">Пройти квиз</a></td></tr>
+        <tr><th scope="row">Жильё</th><td>Арендодатель против, переезд, ремонт, рождение ребёнка.</td><td><a href="#lists">Открыть чек-лист «До визита в приют»</a></td></tr>
+        <tr><th scope="row">Ожидания</th><td>Взрослое животное с историей не похоже на картинку, о характере не говорили.</td><td><a href="#steps">Узнать, как проходит знакомство</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- КВИЗ -->
+<section class="sec sec--yellow" id="quiz">
+  <div class="wrap wrap--mid">
+    <h2>Готовы ли вы взять питомца?</h2>
+    <p class="lead lead--dark">9 вопросов. В конце получите оценку готовности, подсказку, какое животное подойдёт именно вам, и список того, что стоит решить заранее. Это не экзамен: нужно честно посмотреть на свою ситуацию.</p>
+    <div class="sheet quiz" id="quizBox" aria-live="polite">
+      <!-- заполняется из app.js -->
+    </div>
+  </div>
+</section>
+
+<!-- РАСХОДЫ -->
+<section class="sec sec--wall" id="calc">
+  <div class="wrap">
+    <h2>Сколько стоит первый год</h2>
+    <p class="lead">Выберите животное и поправьте цифры под свой город. Суммы по умолчанию ориентировочные: они опираются на публикации 2025–2026 годов <a class="src" href="#sources">[3][4][5]</a>, цены в вашей клинике и магазине могут отличаться.</p>
+
+    <div class="calc">
+      <div class="sheet calc__form">
+        <fieldset class="seg">
+          <legend>Кого берёте?</legend>
+          <label><input type="radio" name="ptype" value="cat" checked><span>Кошка или кот</span></label>
+          <label><input type="radio" name="ptype" value="dogS"><span>Собака до 10 кг</span></label>
+          <label><input type="radio" name="ptype" value="dogM"><span>Собака 10–25 кг</span></label>
+          <label><input type="radio" name="ptype" value="dogL"><span>Собака от 25 кг</span></label>
+        </fieldset>
+
+        <div class="fields" id="calcFields"></div>
+
+        <label class="check">
+          <input type="checkbox" id="sterDone" checked>
+          <span>Животное уже стерилизовано <small>В приютах обычно да, но уточните при выдаче.</small></span>
+        </label>
+
+        <div class="field field--budget">
+          <label for="budget">Сколько вы готовы тратить в месяц на питомца, ₽</label>
+          <input type="number" id="budget" min="0" step="100" value="4000" inputmode="numeric">
+        </div>
+      </div>
+
+      <div class="calc__out" aria-live="polite">
+        <div class="receipt">
+          <h3 class="receipt__h">Чек</h3>
+          <p class="receipt__sub">Первый год с питомцем</p>
+          <div class="receipt__lines" id="bars"></div>
+          <div class="receipt__total">
+            <span>Итого за год</span>
+            <strong id="resYear">—</strong>
+          </div>
+          <div class="receipt__lines receipt__lines--sub">
+            <div class="line"><span>Постоянные расходы в месяц</span><i></i><b id="resMonth">—</b></div>
+            <div class="line"><span>Разовые траты на старте</span><i></i><b id="resStart">—</b></div>
+          </div>
+          <div class="receipt__foot">
+            <p>Чек № <span id="rcNo">0001</span> от <span id="rcDate"></span></p>
+            <div class="barcode" aria-hidden="true"></div>
+            <p>Спасибо, что берёте из приюта</p>
+          </div>
+        </div>
+        <p class="verdict" id="verdict"></p>
+        <p class="tiny">Питомцы живут 10–20 лет. При болезнях расходы могут резко вырасти, поэтому в расчёт уже включён резерв.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЧЕК-ЛИСТЫ -->
+<section class="sec sec--board" id="lists">
+  <div class="wrap">
+    <div class="lists__head">
+      <div>
+        <h2>Чек-листы подготовки</h2>
+        <p class="lead">Отмечайте пункты. Прогресс сохранится в этом браузере, список можно распечатать или сохранить в PDF.</p>
+      </div>
+      <button class="btn btn--yellow" id="printBtn" type="button">Распечатать</button>
+    </div>
+    <div class="board" id="lists-box"></div>
+    <button class="linkbtn" id="resetLists" type="button">Сбросить все отметки</button>
+  </div>
+</section>
+
+<!-- ШАГИ -->
+<section class="sec sec--paper" id="steps">
+  <div class="wrap wrap--mid">
+    <h2>Как проходит взятие из приюта</h2>
+    <ol class="steps">
+      <li>
+        <h3>Выберите приют</h3>
+        <p>Муниципальный, частный или волонтёрский. Почитайте отзывы и посмотрите, как приют показывает животных. В некоторых городах есть единые сервисы, например «Моспитомец» в Москве. <a class="src" href="#sources">[6]</a></p>
+      </li>
+      <li>
+        <h3>Познакомьтесь</h3>
+        <p>Приезжайте минимум два-три раза. С собакой погуляйте, с кошкой посидите рядом. Расспросите волонтёров о характере, здоровье и истории животного.</p>
+      </li>
+      <li>
+        <h3>Пройдите беседу</h3>
+        <p>Вас спросят про жильё, семью и опыт. Это не придирки: приют хочет, чтобы животное не вернулось.</p>
+      </li>
+      <li>
+        <h3>Подпишите договор</h3>
+        <p>Уточните, что делать, если не получится. Многие приюты просят вернуть животное им, а не искать новых хозяев самостоятельно.</p>
+      </li>
+      <li>
+        <h3>Пройдите адаптацию</h3>
+        <p>Первые недели у любого животного идут непросто. Это нормально, и именно для этого нужен чек-лист «Первая неделя».</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec--wall" id="faq">
+  <div class="wrap wrap--mid">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Животные из приюта «с проблемами»?</summary>
+        <p>Не обязательно, но историю многих животных никто не знает. Поэтому в любом случае покажите питомца ветеринару в первые дни и заложите время на адаптацию. Взрослое животное хорошо тем, что его характер уже виден.</p>
+      </details>
+      <details>
+        <summary>Лучше взять щенка или котёнка?</summary>
+        <p>Малыши требуют много времени: кормление по графику, приучение к лотку и прогулкам, ночные побудки. Если вы берёте первое животное и много работаете, взрослое спокойное животное часто окажется проще.</p>
+      </details>
+      <details>
+        <summary>Что, если я пойму, что не справляюсь?</summary>
+        <p>Сразу обратитесь в приют или к волонтёрам, пока ситуация не дошла до крайности. Многие приюты и сообщества помогают консультацией, временной передержкой или поиском новой семьи. Лучше обсудить это заранее при подписании договора.</p>
+      </details>
+      <details>
+        <summary>Нужно ли чипирование и регистрация?</summary>
+        <p>Требования отличаются по регионам и меняются, поэтому уточните их в вашем городе: в ветслужбе, в приюте, в региональных сервисах. Чип и адресник в любом случае сильно повышают шанс найти питомца, если он потеряется.</p>
+      </details>
+      <details>
+        <summary>Можно ли сначала попробовать?</summary>
+        <p>Да. Станьте волонтёром приюта, выгуливайте собак или возьмите животное на временную передержку. Это лучший способ понять, подходит ли вам такая жизнь.</p>
+      </details>
+      <details>
+        <summary>Сайт заменяет консультацию ветеринара или кинолога?</summary>
+        <p>Нет. Он даёт общую ориентацию. По здоровью и поведению конкретного животного нужна консультация специалиста.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ДЛЯ ПРИЮТОВ -->
+<section class="sec sec--yellow" id="shelters">
+  <div class="wrap wrap--mid">
+    <h2>Для приютов и волонтёров</h2>
+    <p class="lead lead--dark">Отправляйте людей на сайт до знакомства с животным. Квиз и калькулятор помогают заранее обсудить деньги, время и жильё, о которых на беседе обычно спрашивают. Вставьте ссылку в анкету животного, в рассылку или в ответ на заявку.</p>
+    <div class="sheet shelters">
+      <h3>Готовое сообщение</h3>
+      <p class="shelters__text" id="shelterText"></p>
+      <div class="shelters__act">
+        <button type="button" class="btn" id="copyShelter">Скопировать текст</button>
+        <span class="shelters__state" id="copyState" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- О ПРОЕКТЕ -->
+<section class="sec sec--paper" id="about-project">
+  <div class="wrap wrap--mid">
+    <h2>О проекте</h2>
+    <dl class="about">
+      <div>
+        <dt>Цель</dt>
+        <dd>Сократить число возвратов животных из новых семей обратно в приюты. Для этого человек оценивает свою готовность, считает бюджет и готовит дом до визита в приют.</dd>
+      </div>
+      <div>
+        <dt>Для кого</dt>
+        <dd>Для людей от 18 до 40 лет, которые впервые думают взять собаку или кошку из приюта: студентов и молодых специалистов, живущих в съёмной или своей квартире. А ещё для волонтёров приютов: им удобно отправить человека на сайт перед знакомством с животным.</dd>
+      </div>
+      <div>
+        <dt>Что внутри</dt>
+        <dd>Квиз из 9 вопросов с оценкой готовности и подсказкой по виду животного. Калькулятор расходов на первый год для кошки и трёх размеров собак. Три чек-листа: до визита в приют, первая неделя и первый месяц. Памятка о том, как проходит взятие из приюта.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ИСТОЧНИКИ -->
+<section class="sec sec--paper sec--tight" id="sources">
+  <div class="wrap wrap--mid">
+    <h2 class="h2--sm">Источники</h2>
+    <ol class="srclist">
+      <li>RTVI. В России прошла перепись бездомных собак и кошек (Всероссийская перепись бездомных животных 2025, Центр изучения питания и благополучия животных). <a href="https://rtvi.com/news/v-rossii-proshla-perepis-bezdomnyh-sobak-i-koshek/" target="_blank" rel="noopener">rtvi.com</a></li>
+      <li>360.ru. «За вами бегать надо? Идите — возьмите». Как мотивировать россиян брать животных из приютов (по итогам переписи домашних животных, апрель 2024). <a href="https://360.ru/tekst/obschestvo/za-vami-begat-nado-idite-vozmite-kak-motivirovat-rossijan-brat-zhivotnyh-iz-prijutov/" target="_blank" rel="noopener">360.ru</a></li>
+      <li>Mail.ru Финансы. Стало известно, сколько стоит содержать собаку россиянам в 2025 году. <a href="https://finance.mail.ru/article/stalo-izvestno-skolko-stoit-soderzhat-sobaku-rossiyanam-v-2025-godu-66825585/" target="_blank" rel="noopener">finance.mail.ru</a></li>
+      <li>Вести, KP.RU. Примерные траты на питомца в 2026 году (июль 2026). <a href="https://www.vesti.ru/ns/kpru-nazvala-primernye-traty-na-pitomca-v-2026-godu" target="_blank" rel="noopener">vesti.ru</a></li>
+      <li>Т—Ж. Как изменились траты на питомцев за последние пять лет. <a href="https://t-j.ru/pets-spend-money/" target="_blank" rel="noopener">t-j.ru</a></li>
+      <li>Правительство Москвы. Сервис «Моспитомец» (запущен в октябре 2025 года). <a href="https://www.mos.ru/news/item/174313073/" target="_blank" rel="noopener">mos.ru</a></li>
+      <li>Kisley M. A., Chung E. J., Levitt H. Investigating the Reasons behind Companion Animal Relinquishment: A Systematic Content Analysis of Shelter Records for Cats and Dogs, 2018–2023 // Animals. 2024. Vol. 14. № 17. Art. 2606. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11394480/" target="_blank" rel="noopener">doi:10.3390/ani14172606</a></li>
+      <li>Thanawala K. When and Why Companion Dogs are Returned to Animal Shelters: A Multifactorial Analysis. Virginia Tech, 2024. <a href="https://vtechworks.lib.vt.edu/items/d6407cd2-1102-46c4-a8e4-13083e69dc00" target="_blank" rel="noopener">vtechworks.lib.vt.edu</a></li>
+    </ol>
+    <p class="tiny">Цифры взяты из этих публикаций и округлены.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__author">Проект выполнил <b>Кислый Михаил Борисович</b>, ОП «Международные отношения», 1&nbsp;курс, НИУ&nbsp;ВШЭ,&nbsp;2026.</p>
+    <p><b>Хвост в дом</b> — учебный социальный проект о бездомных животных. Это не коммерческий сервис и не замена консультации ветеринара, кинолога или зоопсихолога.</p>
+    <button type="button" class="foot__open" id="aboutOpen">Показать паспорт проекта</button>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
